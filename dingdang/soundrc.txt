@@ -1,0 +1,29 @@
+pcm.!default {
+        type asym
+        playback.pcm {
+                type plug
+                slave.pcm "output"
+        }
+        capture.pcm {
+                type plug
+                slave.pcm "input"
+        }
+}
+
+pcm.output {
+        type bluealsa
+        device "EC:FA:5C:B4:01:33"
+        profile "a2dp"
+}
+
+ctl.!default {
+        type bluealsa
+}
+
+pcm.input {
+        type hw
+        card 1
+}
+
+
+pip install pyyaml
